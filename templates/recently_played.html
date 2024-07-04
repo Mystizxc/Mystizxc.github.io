@@ -1,0 +1,22 @@
+<!-- templates/recently_played.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="{{ url_for('top_tracks') }}">Top Tracks</a>
+    <title>Recently Played Songs</title>
+</head>
+<body>
+    <h1>Recently Played Songs</h1>
+    <ul>
+        {% for track in tracks %}
+        <li>
+            <img src="{{ track['album_cover'] }}" alt="{{ track['track_name'] }} cover" width="50" height="50">
+            <strong>{{ track['track_name'] }}</strong> by {{ track['artist_name'] }} <br>
+            Played at: {{ track['played_at'] }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
