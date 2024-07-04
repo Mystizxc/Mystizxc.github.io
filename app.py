@@ -111,8 +111,7 @@ def get_top_tracks():
                  FROM tracks 
                  WHERE played_at >= datetime(?, 'unixepoch')
                  GROUP BY track_id 
-                 ORDER BY play_count DESC 
-                 LIMIT 10''', (one_month_ago,))
+                 ORDER BY play_count DESC ''', (one_month_ago,))
     top_tracks = c.fetchall()
     
     conn.close()
