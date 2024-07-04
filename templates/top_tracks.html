@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Tracks Played</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .track-info {
+            flex: 1;
+        }
+        .track-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .artist-name {
+            color: #888;
+        }
+        .play-count {
+            color: #888;
+            margin-left: 20px;
+        }
+        .album-cover {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top Tracks Played</h1>
+    <ul>
+        {% for track in tracks %}
+            <li>
+                <img class="album-cover" src="{{ track[3] }}" alt="Album Cover">
+                <div class="track-info">
+                    <p class="track-name">{{ track[1] }}</p>
+                    <p class="artist-name">Artist: {{ track[2] }}</p>
+                </div>
+                <p class="play-count">Play Count: {{ track[4] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
