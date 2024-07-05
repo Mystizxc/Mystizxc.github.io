@@ -13,7 +13,7 @@ app.secret_key = os.urandom(24)
 # Spotify API credentials
 SPOTIPY_CLIENT_ID = 'e006c97c09374ab1b5a8c136b015660e'
 SPOTIPY_CLIENT_SECRET = 'e4ec7a482e674436bd5202af2f8bdf45'
-SPOTIPY_REDIRECT_URI = 'https://mystizxc-github-io.onrender.com'
+SPOTIPY_REDIRECT_URI = 'https://mystizxc-github-io.onrender.com/callback'
 
 # Spotify authorization scope
 SCOPE = 'user-read-recently-played'
